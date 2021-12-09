@@ -1,10 +1,10 @@
-package trietjava.javalang;
+package com.demoDigital.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JavalangApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

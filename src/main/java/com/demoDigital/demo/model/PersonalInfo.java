@@ -1,0 +1,106 @@
+package com.demoDigital.demo.model;
+
+import lombok.Data;
+
+import java.time.LocalDate;
+
+import javax.persistence.*;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "personal_info")
+@Data
+public class PersonalInfo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
+    String email;
+
+    String phone;
+
+    String address;
+
+    Gender gender;
+
+    LocalDate dob;
+
+    String linkedin;
+
+    String careerObjective;
+
+    String username;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Gender getGender() {
+        return this.gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public LocalDate getDob() {
+        return this.dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public String getLinkedin() {
+        return this.linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getCareerObjective() {
+        return this.careerObjective;
+    }
+
+    public void setCareerObjective(String careerObjective) {
+        this.careerObjective = careerObjective;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+}
