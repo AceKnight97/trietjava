@@ -5,18 +5,62 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "programming_languages")
 @Data
 public class ProgrammingLanguage {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
-    DigitalCV digitalCV;
+    @JsonIgnore
+    private DigitalCV digitalCV;
 
-    String technicalSkillset;
-    String competence;
-    Level level;
+    private String technicalSkillset;
+    private String competence;
+    private Level level;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public DigitalCV getDigitalCV() {
+        return this.digitalCV;
+    }
+
+    public void setDigitalCV(DigitalCV digitalCV) {
+        this.digitalCV = digitalCV;
+    }
+
+    public String getTechnicalSkillset() {
+        return this.technicalSkillset;
+    }
+
+    public void setTechnicalSkillset(String technicalSkillset) {
+        this.technicalSkillset = technicalSkillset;
+    }
+
+    public String getCompetence() {
+        return this.competence;
+    }
+
+    public void setCompetence(String competence) {
+        this.competence = competence;
+    }
+
+    public Level getLevel() {
+        return this.level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
 }

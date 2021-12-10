@@ -13,23 +13,23 @@ import javax.persistence.Id;
 public class PersonalInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String email;
+    private String email;
 
-    String phone;
+    private String phone;
 
-    String address;
+    private String address;
 
-    Gender gender;
+    private Gender gender;
 
-    LocalDate dob;
+    private LocalDate dob;
 
-    String linkedin;
+    private String linkedin;
 
-    String careerObjective;
+    private String careerObjective;
 
-    String username;
+    private String username;
 
     public Long getId() {
         return this.id;

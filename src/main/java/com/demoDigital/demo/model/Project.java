@@ -5,19 +5,62 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "projects")
 @Data
 public class Project {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
-    DigitalCV digitalCV;
+    @JsonIgnore
+    private DigitalCV digitalCV;
 
-    String name;
-    String languages;
-    String description;
+    private String name;
+    private String languages;
+    private String description;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public DigitalCV getDigitalCV() {
+        return this.digitalCV;
+    }
+
+    public void setDigitalCV(DigitalCV digitalCV) {
+        this.digitalCV = digitalCV;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLanguages() {
+        return this.languages;
+    }
+
+    public void setLanguages(String languages) {
+        this.languages = languages;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }

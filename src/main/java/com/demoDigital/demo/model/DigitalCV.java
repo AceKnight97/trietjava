@@ -7,15 +7,14 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 @Table(name = "digitalcvs")
 @Data
 public class DigitalCV {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+    Long id;
 
     @OneToOne
     @JoinColumn(name = "per_id")

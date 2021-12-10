@@ -4,8 +4,12 @@ import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.repository.DigitalCVRespository;
 import com.demoDigital.demo.services.DigitalCVService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +22,7 @@ public class DigitalCVController {
     @Autowired
     DigitalCVService digitalCVService;
 
+    // GET
     @GetMapping("/{id}")
     public DigitalCV getCV(@PathVariable Long id) {
         return digitalCVService.getDigitalCV(id);
@@ -27,4 +32,17 @@ public class DigitalCVController {
     public List<DigitalCV> getCVs() {
         return digitalCVService.getDigitalCVs();
     }
+
+    // POST
+    @PostMapping("/createcv")
+    public DigitalCV createUser(@RequestBody DigitalCV data) {
+        return digitalCVService.createDigitalCV(data);
+    }
+
+    // PUST
+    @PutMapping("/updatecv/{id}")
+    public DigitalCV createUser(@RequestBody DigitalCV data, @PathVariable Long id) {
+        return digitalCVService.updateDigitalCV(data, id);
+    }
+
 }
