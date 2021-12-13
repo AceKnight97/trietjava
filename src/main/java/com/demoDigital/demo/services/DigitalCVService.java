@@ -2,6 +2,7 @@ package com.demoDigital.demo.services;
 
 import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.Education;
+import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.repository.DigitalCVRespository;
 // import com.demoDigital.demo.repository.PersonalInfoRespository;
 import com.demoDigital.demo.repository.EducationRespository;
@@ -68,14 +69,18 @@ public class DigitalCVService {
     // PUT
 
     // DELETE
-    public Boolean deleteDigitalCV(Long id) {
+    public MutationResponse deleteDigitalCV(Long id) {
         DigitalCV existData = digitalCVRepo.getById(id);
+        MutationResponse response = new MutationResponse();
         if (existData == null) {
-            return false;
+            response.isSuccess = false;
+            response.message = "No exist data!";
+            return response;
         }
         existData.setIsActive(false);
         digitalCVRepo.save(existData);
-        return true;
+        response.isSuccess = true;
+        return response;
     }
 
 }
