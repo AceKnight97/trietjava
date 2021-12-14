@@ -23,7 +23,7 @@ public class DigitalCVService {
 
     // GET
     public DigitalCV getDigitalCV(Long id) {
-        return digitalCVRepo.getById(id);
+        return digitalCVRepo.findById(id).get();
     }
 
     public List<DigitalCV> getDigitalCVs() {
@@ -36,7 +36,7 @@ public class DigitalCVService {
     }
 
     public DigitalCV updateDigitalCV(DigitalCV data, Long id) {
-        DigitalCV existData = digitalCVRepo.getById(id);
+        DigitalCV existData = digitalCVRepo.findById(id).get();
 
         // UPDATE BASIC
         existData.setHobby(data.getHobby());
@@ -53,7 +53,7 @@ public class DigitalCVService {
 
         for (Education education : data.getEducations()) {
             if (existEdu.stream().anyMatch(e -> e.getId() == education.getId())) {
-                Education curEdu = educationRespo.getById(education.getId());
+                Education curEdu = educationRespo.findById(education.getId()).get();
                 Education updateEdu = modelMapper.map(curEdu, Education.class);
                 newEdu.add(educationRespo.save(updateEdu));
             } else {
@@ -68,7 +68,7 @@ public class DigitalCVService {
 
     // DELETE
     public MutationResponse deleteDigitalCV(Long id) {
-        DigitalCV existData = digitalCVRepo.getById(id);
+        DigitalCV existData = digitalCVRepo.findById(id).get();
         MutationResponse response = new MutationResponse();
         if (existData == null) {
             response.isSuccess = false;
