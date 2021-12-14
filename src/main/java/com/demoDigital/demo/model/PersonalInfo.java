@@ -1,6 +1,6 @@
 package com.demoDigital.demo.model;
 
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,9 @@ import javax.persistence.Id;
 
 @Entity
 @Table(name = "personal_info")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class PersonalInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

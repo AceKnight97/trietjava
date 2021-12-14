@@ -38,7 +38,7 @@ public class DigitalCVController {
 
     // POST
     @PostMapping("/createcv")
-    public MutationResponse createUser(@RequestBody DigitalCV data) {
+    public MutationResponse createcv(@RequestBody DigitalCV data) {
         DigitalCV saveData = digitalCVService.createDigitalCV(data);
         if (saveData == null) {
             response.isSuccess = false;

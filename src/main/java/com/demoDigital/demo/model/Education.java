@@ -1,6 +1,6 @@
 package com.demoDigital.demo.model;
 
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "educations")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

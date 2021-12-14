@@ -32,7 +32,13 @@ public class DigitalCVService {
 
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
-        return digitalCVRepo.save(data);
+        DigitalCV newDigitalCV = digitalCVRepo.save(data);
+        for (Education edu : newDigitalCV.getEducations()) {
+            edu.setDigitalCV(newDigitalCV);
+            educationRespo.save(edu);
+        }
+//        digitalCVRepo.save(newDigitalCV);
+        return newDigitalCV;
     }
 
     public DigitalCV updateDigitalCV(DigitalCV data, Long id) {

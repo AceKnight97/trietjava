@@ -1,6 +1,9 @@
 package com.demoDigital.demo.model;
 
-import lombok.Data;
+import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Id;
@@ -9,7 +12,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "digitalcvs")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class DigitalCV {
 
     @Id
@@ -20,7 +25,7 @@ public class DigitalCV {
     @JoinColumn(name = "per_id")
     private PersonalInfo personalInfo;
 
-    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "digitalCV")
     private List<Education> educations = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)

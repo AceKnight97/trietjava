@@ -1,6 +1,6 @@
 package com.demoDigital.demo.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.persistence.Id;
@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "programming_languages")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class ProgrammingLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
