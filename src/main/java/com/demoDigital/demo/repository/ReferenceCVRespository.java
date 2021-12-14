@@ -7,10 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
 import org.springframework.stereotype.Repository;
 
-import com.demoDigital.demo.model.Reference;
+import com.demoDigital.demo.model.ReferenceCV;
 
 @Repository
-public interface ReferenceRespository extends JpaRepository<Reference, Long> {
-
+public interface ReferenceCVRespository extends JpaRepository<ReferenceCV, Long> {
 
 }

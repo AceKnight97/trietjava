@@ -14,31 +14,31 @@ public class DigitalCV {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "per_id")
     private PersonalInfo personalInfo;
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<Education> educations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<Certificate> certificates = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
-    private List<Reference> references = new ArrayList<>();
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
+    private List<ReferenceCV> referencecvs = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<ProgrammingLanguage> programmingLanguages = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<WorkingExperience> workingExperiences = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<Project> projects = new ArrayList<>();
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<OtherSkills> otherSkills = new ArrayList<>();
 
     private String hobby;
@@ -91,20 +91,28 @@ public class DigitalCV {
         this.certificates = certificates;
     }
 
-    public List<Reference> getReferences() {
-        return this.references;
+    public List<ReferenceCV> getReferencecvs() {
+        return this.referencecvs;
     }
 
-    public void setReferences(List<Reference> references) {
-        this.references = references;
+    public void setReferencecvs(List<ReferenceCV> referencecvs) {
+        this.referencecvs = referencecvs;
     }
 
-    public List<ProgrammingLanguage> getProgrammings() {
+    public List<ProgrammingLanguage> getProgrammingLanguages() {
         return this.programmingLanguages;
     }
 
-    public void setProgrammings(List<ProgrammingLanguage> programmingLanguages) {
+    public void setProgrammingLanguages(List<ProgrammingLanguage> programmingLanguages) {
         this.programmingLanguages = programmingLanguages;
+    }
+
+    public List<WorkingExperience> getWorkingExperiences() {
+        return this.workingExperiences;
+    }
+
+    public void setWorkingExperiences(List<WorkingExperience> workingExperiences) {
+        this.workingExperiences = workingExperiences;
     }
 
     public List<WorkingExperience> getWorkExperiences() {

@@ -8,9 +8,9 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "references")
+@Table(name = "referencecvs")
 @Data
-public class Reference {
+public class ReferenceCV {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

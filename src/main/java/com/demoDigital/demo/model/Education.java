@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Data
 public class Education {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JsonIgnore
     private DigitalCV digitalCV;
