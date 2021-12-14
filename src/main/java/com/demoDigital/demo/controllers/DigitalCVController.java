@@ -1,6 +1,7 @@
 package com.demoDigital.demo.controllers;
 
 import com.demoDigital.demo.model.DigitalCV;
+import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.repository.DigitalCVRespository;
 import com.demoDigital.demo.services.DigitalCVService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class DigitalCVController {
     @Autowired
     DigitalCVService digitalCVService;
 
+    MutationResponse response = new MutationResponse();
+
     // GET
     @GetMapping("/{id}")
     public DigitalCV getCV(@PathVariable Long id) {
@@ -35,14 +38,26 @@ public class DigitalCVController {
 
     // POST
     @PostMapping("/createcv")
-    public DigitalCV createUser(@RequestBody DigitalCV data) {
-        return digitalCVService.createDigitalCV(data);
+    public MutationResponse createUser(@RequestBody DigitalCV data) {
+        DigitalCV saveData = digitalCVService.createDigitalCV(data);
+        if (saveData == null) {
+            response.isSuccess = false;
+        } else {
+            response.data = saveData;
+        }
+        return response;
     }
 
     // PUST
     @PutMapping("/updatecv/{id}")
-    public DigitalCV createUser(@RequestBody DigitalCV data, @PathVariable Long id) {
-        return digitalCVService.updateDigitalCV(data, id);
+    public MutationResponse createUser(@RequestBody DigitalCV data, @PathVariable Long id) {
+        DigitalCV saveData = digitalCVService.updateDigitalCV(data, id);
+        if (saveData == null) {
+            response.isSuccess = false;
+        } else {
+            response.data = saveData;
+        }
+        return response;
     }
 
 }

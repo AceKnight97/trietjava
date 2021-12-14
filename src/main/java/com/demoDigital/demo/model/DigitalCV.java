@@ -115,14 +115,6 @@ public class DigitalCV {
         this.workingExperiences = workingExperiences;
     }
 
-    public List<WorkingExperience> getWorkExperiences() {
-        return this.workingExperiences;
-    }
-
-    public void setWorkExperiences(List<WorkingExperience> workingExperiences) {
-        this.workingExperiences = workingExperiences;
-    }
-
     public List<Project> getProjects() {
         return this.projects;
     }
