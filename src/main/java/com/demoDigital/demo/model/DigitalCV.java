@@ -16,7 +16,7 @@ public class DigitalCV {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @OneToOne
+    @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "per_id")
     private PersonalInfo personalInfo;
 
@@ -30,10 +30,10 @@ public class DigitalCV {
     private List<Reference> references = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV")
-    private List<ProgrammingLanguage> programmings = new ArrayList<>();
+    private List<ProgrammingLanguage> programmingLanguages = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV")
-    private List<WorkExperience> workExperiences = new ArrayList<>();
+    private List<WorkingExperience> workingExperiences = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV")
     private List<Project> projects = new ArrayList<>();
@@ -100,19 +100,19 @@ public class DigitalCV {
     }
 
     public List<ProgrammingLanguage> getProgrammings() {
-        return this.programmings;
+        return this.programmingLanguages;
     }
 
-    public void setProgrammings(List<ProgrammingLanguage> programmings) {
-        this.programmings = programmings;
+    public void setProgrammings(List<ProgrammingLanguage> programmingLanguages) {
+        this.programmingLanguages = programmingLanguages;
     }
 
-    public List<WorkExperience> getWorkExperiences() {
-        return this.workExperiences;
+    public List<WorkingExperience> getWorkExperiences() {
+        return this.workingExperiences;
     }
 
-    public void setWorkExperiences(List<WorkExperience> workExperiences) {
-        this.workExperiences = workExperiences;
+    public void setWorkExperiences(List<WorkingExperience> workingExperiences) {
+        this.workingExperiences = workingExperiences;
     }
 
     public List<Project> getProjects() {

@@ -7,10 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
 import org.springframework.stereotype.Repository;
 
-import com.demoDigital.demo.model.WorkExperience;
+import com.demoDigital.demo.model.WorkingExperience;
 
 @Repository
-public interface WorkExperienceRespository extends JpaRepository<WorkExperience, Long> {
-
+public interface WorkExperienceRespository extends JpaRepository<WorkingExperience, Long> {
 
 }

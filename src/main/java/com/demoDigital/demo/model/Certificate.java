@@ -19,7 +19,7 @@ public class Certificate {
 
     @ManyToOne
     @JsonIgnore
-    DigitalCV digitalCV;
+    private DigitalCV digitalCV;
 
     private LocalDate date;
     private String certificateName;

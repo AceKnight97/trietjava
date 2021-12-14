@@ -19,7 +19,8 @@ public class Reference {
     @JsonIgnore
     private DigitalCV digitalCV;
 
-    private String name;
+    private String referenceName;
+    private String companyName;
     private String email;
     private String phone;
 
@@ -39,12 +40,20 @@ public class Reference {
         this.digitalCV = digitalCV;
     }
 
-    public String getName() {
-        return this.name;
+    public String getReferenceName() {
+        return this.referenceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReferenceName(String referenceName) {
+        this.referenceName = referenceName;
+    }
+
+    public String getCompanyName() {
+        return this.companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getEmail() {

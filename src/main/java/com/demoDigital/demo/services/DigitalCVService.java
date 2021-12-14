@@ -4,7 +4,6 @@ import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.Education;
 import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.repository.DigitalCVRespository;
-// import com.demoDigital.demo.repository.PersonalInfoRespository;
 import com.demoDigital.demo.repository.EducationRespository;
 
 import org.modelmapper.ModelMapper;
@@ -20,7 +19,6 @@ public class DigitalCVService {
 
     @Autowired
     DigitalCVRespository digitalCVRepo;
-    // PersonalInfoRespository personalInfoRepo;
     EducationRespository educationRespo;
 
     // GET

@@ -17,7 +17,7 @@ public class Education {
     private Long id;
     @ManyToOne
     @JsonIgnore
-    DigitalCV digitalCV;
+    private DigitalCV digitalCV;
 
     private String name;
     private String major;
