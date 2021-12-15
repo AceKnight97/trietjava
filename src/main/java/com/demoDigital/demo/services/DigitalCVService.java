@@ -48,12 +48,19 @@ public class DigitalCVService {
 
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
-        DigitalCV newDigitalCV = digitalCVRepo.save(data);
+        String check = data.getPersonalInfo().getEmail();
+        System.out.println("CheckE: "+ check);
         PersonalInfo personCV = personalInfoRepo.findByEmail(data.getPersonalInfo().getEmail());
         if(personCV == null){
+            System.out.println("personCV == null");
             personCV = data.getPersonalInfo();
             personalInfoRepo.save(personCV);
+        }else{
+            System.out.println("personCV NOT null");
+            data.setPersonalInfo(personCV);
+            digitalCVRepo.save(data);
         }
+        DigitalCV newDigitalCV = digitalCVRepo.save(data);
         
         List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
         lisDigitalCVs.add(newDigitalCV);
