@@ -7,19 +7,24 @@ import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 @Entity
-@Table(name = "personal_info")
+@Table(name = "user_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
-public class PersonalInfo {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // @OneToMany(mappedBy = "personalInfo", cascade = CascadeType.ALL)
-    // private List<DigitalCV> digitalcvs = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<DigitalCV> digitalcvs = new ArrayList<>();
+
     private String email;
     private String phone;
     private String address;
@@ -29,13 +34,16 @@ public class PersonalInfo {
     private String careerObjective;
     private String username;
 
-    // public List<DigitalCV> getDigitalcvs() {
-    // return this.digitalcvs;
-    // }
+    @JsonIgnore
+    private String password;
 
-    // public void setDigitalcvs(List<DigitalCV> digitalcvs) {
-    // this.digitalcvs = digitalcvs;
-    // }
+    public List<DigitalCV> getDigitalcvs() {
+        return this.digitalcvs;
+    }
+
+    public void setDigitalcvs(List<DigitalCV> digitalcvs) {
+        this.digitalcvs = digitalcvs;
+    }
 
     public Long getId() {
         return this.id;
@@ -107,6 +115,14 @@ public class PersonalInfo {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

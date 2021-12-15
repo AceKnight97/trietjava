@@ -29,6 +29,10 @@ public class DigitalCV {
     // private PersonalInfo personalInfo;
     @ManyToOne
     @JsonIgnore
+    private User user;
+
+    @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "per_id")
     private PersonalInfo personalInfo;
 
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
