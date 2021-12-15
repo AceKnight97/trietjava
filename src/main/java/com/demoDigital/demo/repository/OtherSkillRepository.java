@@ -1,7 +1,5 @@
 package com.demoDigital.demo.repository;
 
-// import java.util.List;
-
 import com.demoDigital.demo.model.OtherSkill;
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -45,26 +45,15 @@ public class DigitalCVService {
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
-        // personalInfoRepo.save(data.getPersonalInfo());
-
-        // String email = newDigitalCV.getPersonalInfo().getEmail();
-        // System.out.println("EMAIL: " + email);
-        // PersonalInfo curPerson = personalInfoRepo.findByEmail(email);
-
-        // if (curPerson == null) {
-        // PersonalInfo newPer = newDigitalCV.getPersonalInfo();
-        // newDigitalCV.setPersonalInfo(newPer);
-        // personalInfoRepo.save(newPer);
-        // } else {
-        // for (DigitalCV perCv : curPerson.getDigitalcvs()) {
-        // perCv.setPersonalInfo(curPerson);
-        // digitalCVRepo.save(perCv);
-        // }
-        // }
-        // for (DigitalCV perCv : per.getDigitalCVs()) {
-        // perCv.setPersonalInfo(per);
-        // digitalCVRepo.save(perCv);
-        // }
+        PersonalInfo personCV = personalInfoRepo.findByEmail(data.getPersonalInfo().getEmail());
+        if(personCV == null){
+            personCV = data.getPersonalInfo();
+            personalInfoRepo.save(personCV);
+        }
+        List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
+        lisDigitalCVs.add(newDigitalCV);
+        personalInfoRepo.save(personCV);
+        
         for (Education item : newDigitalCV.getEducations()) {
             item.setDigitalCV(newDigitalCV);
             educationRespo.save(item);

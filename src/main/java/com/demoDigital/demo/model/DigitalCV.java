@@ -24,15 +24,7 @@ public class DigitalCV {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
-    // @JoinColumn(name = "per_id")
-    // private PersonalInfo personalInfo;
-    @ManyToOne
-    @JsonIgnore
-    private User user;
-
-    @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "per_id")
+    @ManyToOne(cascade = CascadeType.ALL)
     private PersonalInfo personalInfo;
 
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
