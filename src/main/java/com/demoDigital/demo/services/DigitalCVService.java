@@ -42,6 +42,10 @@ public class DigitalCVService {
         return digitalCVRepo.findAll();
     }
 
+    public List<DigitalCV> getCVsByEmail(String email){
+        return digitalCVRepo.getByEmail(email);
+    }
+
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
@@ -50,6 +54,7 @@ public class DigitalCVService {
             personCV = data.getPersonalInfo();
             personalInfoRepo.save(personCV);
         }
+        
         List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
         lisDigitalCVs.add(newDigitalCV);
         personalInfoRepo.save(personCV);

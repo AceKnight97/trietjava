@@ -36,6 +36,11 @@ public class DigitalCVController {
         return digitalCVService.getDigitalCVs();
     }
 
+    @GetMapping("/email/{email}")
+    public List<DigitalCV> getCVsByEmail(@PathVariable String email) {
+        return digitalCVService.getCVsByEmail(email);
+    }
+
     // POST
     @PostMapping("/createcv")
     public MutationResponse createcv(@RequestBody DigitalCV data) {
