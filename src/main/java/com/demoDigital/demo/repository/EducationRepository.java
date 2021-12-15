@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.demoDigital.demo.model.Education;
 
 @Repository
-public interface EducationRespository extends JpaRepository<Education, Long> {
-
+public interface EducationRepository extends JpaRepository<Education, Long> {
 
 }

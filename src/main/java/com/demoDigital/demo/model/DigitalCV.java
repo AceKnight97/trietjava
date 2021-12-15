@@ -7,6 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +24,14 @@ public class DigitalCV {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "per_id")
+    // @OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
+    // @JoinColumn(name = "per_id")
+    // private PersonalInfo personalInfo;
+    @ManyToOne
+    @JsonIgnore
     private PersonalInfo personalInfo;
 
-    @OneToMany(mappedBy = "digitalCV")
+    @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<Education> educations = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
@@ -44,7 +50,7 @@ public class DigitalCV {
     private List<Project> projects = new ArrayList<>();
 
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
-    private List<OtherSkills> otherSkills = new ArrayList<>();
+    private List<OtherSkill> otherSkills = new ArrayList<>();
 
     private String hobby;
     private String photo;
@@ -128,11 +134,11 @@ public class DigitalCV {
         this.projects = projects;
     }
 
-    public List<OtherSkills> getOtherSkills() {
+    public List<OtherSkill> getOtherSkills() {
         return this.otherSkills;
     }
 
-    public void setOtherSkills(List<OtherSkills> otherSkills) {
+    public void setOtherSkills(List<OtherSkill> otherSkills) {
         this.otherSkills = otherSkills;
     }
 

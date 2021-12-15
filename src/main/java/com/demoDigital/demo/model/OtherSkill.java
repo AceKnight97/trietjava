@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OtherSkills {
+public class OtherSkill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

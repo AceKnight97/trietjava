@@ -1,10 +1,7 @@
 package com.demoDigital.demo.services;
 
-import com.demoDigital.demo.model.DigitalCV;
-import com.demoDigital.demo.model.Education;
-import com.demoDigital.demo.model.MutationResponse;
-import com.demoDigital.demo.repository.DigitalCVRespository;
-import com.demoDigital.demo.repository.EducationRespository;
+import com.demoDigital.demo.model.*;
+import com.demoDigital.demo.repository.*;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +15,23 @@ public class DigitalCVService {
     ModelMapper modelMapper = new ModelMapper();
 
     @Autowired
-    DigitalCVRespository digitalCVRepo;
-    EducationRespository educationRespo;
+    DigitalCVRepository digitalCVRepo;
+    @Autowired
+    PersonalInfoRepository personalInfoRepo;
+    @Autowired
+    EducationRepository educationRespo;
+    @Autowired
+    CertificateRepository certificateRepo;
+    @Autowired
+    ReferenceCVRepository referenceCVRepo;
+    @Autowired
+    ProgrammingRepository programmingRepo;
+    @Autowired
+    WorkingExperienceRepository workingExperienceRepo;
+    @Autowired
+    ProjectRepository projectRepo;
+    @Autowired
+    OtherSkillRepository otherSkillRepo;
 
     // GET
     public DigitalCV getDigitalCV(Long id) {
@@ -33,11 +45,53 @@ public class DigitalCVService {
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
-        for (Education edu : newDigitalCV.getEducations()) {
-            edu.setDigitalCV(newDigitalCV);
-            educationRespo.save(edu);
+        String email = newDigitalCV.getPersonalInfo().getEmail();
+        System.out.println("EMAIL: " + email);
+        // PersonalInfo curPerson = personalInfoRepo.findByEmail(email);
+        // if (curPerson == null) {
+        // PersonalInfo newPer = newDigitalCV.getPersonalInfo();
+        // newDigitalCV.setPersonalInfo(newPer);
+        // personalInfoRepo.save(newPer);
+        // } else {
+        // for (DigitalCV perCv : curPerson.getDigitalcvs()) {
+        // perCv.setPersonalInfo(curPerson);
+        // digitalCVRepo.save(perCv);
+        // }
+        // }
+        // for (DigitalCV perCv : per.getDigitalCVs()) {
+        // perCv.setPersonalInfo(per);
+        // digitalCVRepo.save(perCv);
+        // }
+        for (Education item : newDigitalCV.getEducations()) {
+            item.setDigitalCV(newDigitalCV);
+            educationRespo.save(item);
         }
-//        digitalCVRepo.save(newDigitalCV);
+        for (Certificate item : newDigitalCV.getCertificates()) {
+            item.setDigitalCV(newDigitalCV);
+            certificateRepo.save(item);
+        }
+        for (ReferenceCV item : newDigitalCV.getReferencecvs()) {
+            item.setDigitalCV(newDigitalCV);
+            referenceCVRepo.save(item);
+        }
+        for (ProgrammingLanguage item : newDigitalCV.getProgrammingLanguages()) {
+            item.setDigitalCV(newDigitalCV);
+            programmingRepo.save(item);
+        }
+        for (WorkingExperience item : newDigitalCV.getWorkingExperiences()) {
+            item.setDigitalCV(newDigitalCV);
+            workingExperienceRepo.save(item);
+        }
+        for (Project item : newDigitalCV.getProjects()) {
+            item.setDigitalCV(newDigitalCV);
+            projectRepo.save(item);
+        }
+        for (OtherSkill item : newDigitalCV.getOtherSkills()) {
+            item.setDigitalCV(newDigitalCV);
+            otherSkillRepo.save(item);
+        }
+
+        digitalCVRepo.save(newDigitalCV);
         return newDigitalCV;
     }
 

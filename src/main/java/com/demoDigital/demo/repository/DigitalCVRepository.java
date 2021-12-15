@@ -12,10 +12,10 @@ import java.util.List;
 import com.demoDigital.demo.model.DigitalCV;
 
 @Repository
-public interface DigitalCVRespository extends JpaRepository<DigitalCV, Long> {
+public interface DigitalCVRepository extends JpaRepository<DigitalCV, Long> {
 
-	// @Query(value = "SELECT  * FROM DigitalCV WHERE isActive = :true", nativeQuery = true)
+	// @Query(value = "SELECT * FROM DigitalCV WHERE isActive = :true", nativeQuery
+	// = true)
 	// List<DigitalCV> getActiveCVs(Boolean isActive);
-
 
 }

@@ -3,9 +3,11 @@ package com.demoDigital.demo.model;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "personal_info")
@@ -17,21 +19,25 @@ public class PersonalInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany(mappedBy = "personalInfo", cascade = CascadeType.ALL)
+    private List<DigitalCV> digitalcvs = new ArrayList<>();
+
     private String email;
-
     private String phone;
-
     private String address;
-
     private Gender gender;
-
     private LocalDate dob;
-
     private String linkedin;
-
     private String careerObjective;
-
     private String username;
+
+    public List<DigitalCV> getDigitalcvs() {
+        return this.digitalcvs;
+    }
+
+    public void setDigitalcvs(List<DigitalCV> digitalcvs) {
+        this.digitalcvs = digitalcvs;
+    }
 
     public Long getId() {
         return this.id;

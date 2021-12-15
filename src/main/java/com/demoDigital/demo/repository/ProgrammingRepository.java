@@ -7,10 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
 import org.springframework.stereotype.Repository;
 
-import com.demoDigital.demo.model.Project;
+import com.demoDigital.demo.model.ProgrammingLanguage;
 
 @Repository
-public interface ProjectRespository extends JpaRepository<Project, Long> {
-
+public interface ProgrammingRepository extends JpaRepository<ProgrammingLanguage, Long> {
 
 }

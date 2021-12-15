@@ -2,7 +2,7 @@ package com.demoDigital.demo.controllers;
 
 import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.MutationResponse;
-import com.demoDigital.demo.repository.DigitalCVRespository;
+import com.demoDigital.demo.repository.DigitalCVRepository;
 import com.demoDigital.demo.services.DigitalCVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
