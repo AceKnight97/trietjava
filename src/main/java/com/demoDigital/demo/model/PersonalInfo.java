@@ -3,11 +3,11 @@ package com.demoDigital.demo.model;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
+// import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.Id;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 @Entity
 @Table(name = "personal_info")
@@ -28,6 +28,7 @@ public class PersonalInfo {
     private String linkedin;
     private String careerObjective;
     private String username;
+    private String password;
 
     // public List<DigitalCV> getDigitalcvs() {
     // return this.digitalcvs;
@@ -107,6 +108,14 @@ public class PersonalInfo {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }
