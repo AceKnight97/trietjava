@@ -3,7 +3,6 @@ package com.demoDigital.demo.services;
 import com.demoDigital.demo.model.*;
 import com.demoDigital.demo.repository.*;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Service
 public class DigitalCVService {
-    ModelMapper modelMapper = new ModelMapper();
 
     @Autowired
     DigitalCVRepository digitalCVRepo;
@@ -33,6 +31,21 @@ public class DigitalCVService {
     @Autowired
     OtherSkillRepository otherSkillRepo;
 
+    @Autowired
+    OtherSkillService otherSkillService;
+    @Autowired
+    EducationService educationService;
+    @Autowired
+    WorkingExperienceService workingExperienceService;
+    @Autowired
+    ReferenceService referenceService;
+    @Autowired
+    CertificateService certificateService;
+    @Autowired
+    ProjectService projectService;
+    @Autowired
+    ProgrammingLanguageService programmingLanguageService;
+
     // GET
     public DigitalCV getDigitalCV(Long id) {
         return digitalCVRepo.findById(id).get();
@@ -40,6 +53,10 @@ public class DigitalCVService {
 
     public List<DigitalCV> getDigitalCVs() {
         return digitalCVRepo.findAll();
+    }
+
+    public List<OtherSkill> getTest() {
+        return otherSkillRepo.findAll();
     }
 
     public List<DigitalCV> getCVsByEmail(String email) {
@@ -114,102 +131,25 @@ public class DigitalCVService {
             existData.setPersonalInfo(curPerson);
 
             // UPDATE EDUCATION
-            List<Education> newEdu = new ArrayList<>();
-            for (Education item : data.getEducations()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    Education curItem = educationRespo.findById(itemId).get();
-                    Education updateItem = curItem.updateModel(curItem, item);
-                    newEdu.add(educationRespo.save(updateItem));
-                } else {
-                    newEdu.add(educationRespo.save(item));
-                }
-            }
-            existData.setEducations(newEdu);
+            educationService.updateEducation(data, existData);
 
             // UPDATE CERTIFICATE
-            List<Certificate> newCerti = new ArrayList<>();
-            for (Certificate item : data.getCertificates()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    Certificate curItem = certificateRepo.findById(itemId).get();
-                    Certificate updateItem = curItem.updateModel(curItem, item);
-                    newCerti.add(certificateRepo.save(updateItem));
-                } else {
-                    newCerti.add(certificateRepo.save(item));
-                }
-            }
-            existData.setCertificates(newCerti);
+            certificateService.updateCertificate(data, existData);
 
             // UPDATE WORKING EXPERIENCE
-            List<WorkingExperience> newWorkExp = new ArrayList<>();
-            for (WorkingExperience item : data.getWorkingExperiences()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    WorkingExperience curItem = workingExperienceRepo.findById(itemId).get();
-                    WorkingExperience updateItem = curItem.updateModel(curItem, item);
-                    newWorkExp.add(workingExperienceRepo.save(updateItem));
-                } else {
-                    newWorkExp.add(workingExperienceRepo.save(item));
-                }
-            }
-            existData.setWorkingExperiences(newWorkExp);
+            workingExperienceService.updateWorkingExp(data, existData);
 
             // UPDATE REFERENCE
-            List<ReferenceCV> newRefer = new ArrayList<>();
-            for (ReferenceCV item : data.getReferencecvs()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    ReferenceCV curItem = referenceCVRepo.findById(itemId).get();
-                    ReferenceCV updateItem = curItem.updateModel(curItem, item);
-                    newRefer.add(referenceCVRepo.save(updateItem));
-                } else {
-                    newRefer.add(referenceCVRepo.save(item));
-                }
-            }
-            existData.setReferencecvs(newRefer);
+            referenceService.updateReference(data, existData);
 
             // UPDATE OTHER SKILLS
-            List<OtherSkill> newSkill = new ArrayList<>();
-            for (OtherSkill item : data.getOtherSkills()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    OtherSkill curItem = otherSkillRepo.findById(itemId).get();
-                    OtherSkill updateItem = curItem.updateModel(curItem, item);
-                    newSkill.add(otherSkillRepo.save(updateItem));
-                } else {
-                    newSkill.add(otherSkillRepo.save(item));
-                }
-            }
-            existData.setOtherSkills(newSkill);
+            otherSkillService.updateOtherSkill(data, existData);
 
             // UPDATE PROJECT
-            List<Project> newProject = new ArrayList<>();
-            for (Project item : data.getProjects()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    Project curItem = projectRepo.findById(itemId).get();
-                    Project updateItem = curItem.updateModel(curItem, item);
-                    newProject.add(projectRepo.save(updateItem));
-                } else {
-                    newProject.add(projectRepo.save(item));
-                }
-            }
-            existData.setProjects(newProject);
+            projectService.updateProject(data, existData);
 
-            // UPDATE PROJECT
-            List<ProgrammingLanguage> newProgramming = new ArrayList<>();
-            for (ProgrammingLanguage item : data.getProgrammingLanguages()) {
-                Long itemId = item.getId();
-                if (itemId != null) {
-                    ProgrammingLanguage curItem = programmingRepo.findById(itemId).get();
-                    ProgrammingLanguage updateItem = curItem.updateModel(curItem, item);
-                    newProgramming.add(programmingRepo.save(updateItem));
-                } else {
-                    newProgramming.add(programmingRepo.save(item));
-                }
-            }
-            existData.setProgrammingLanguages(newProgramming);
+            // UPDATE PROGRAMMING LANGUAGES
+            projectService.updateProject(data, existData);
 
             return digitalCVRepo.save(existData);
         } catch (Exception e) {

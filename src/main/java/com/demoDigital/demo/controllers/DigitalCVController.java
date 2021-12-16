@@ -2,6 +2,7 @@ package com.demoDigital.demo.controllers;
 
 import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.MutationResponse;
+import com.demoDigital.demo.model.OtherSkill;
 import com.demoDigital.demo.repository.DigitalCVRepository;
 import com.demoDigital.demo.services.DigitalCVService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,15 +40,20 @@ public class DigitalCVController {
         return digitalCVService.getCVsByEmail(email);
     }
 
-    public MutationResponse checkUsernameJobTitle(DigitalCV data){
+    @GetMapping("/test")
+    public List<OtherSkill> getTest() {
+        return digitalCVService.getTest();
+    }
+
+    public MutationResponse checkUsernameJobTitle(DigitalCV data) {
         MutationResponse response = new MutationResponse();
         String username = data.getPersonalInfo().getUsername();
         String jobTitle = data.getJobTitle();
-        if(username.isEmpty() || jobTitle.isEmpty()){
+        if (username == null || jobTitle == null) {
             response.isSuccess = false;
-            response.message ="No username or job title";
+            response.message = "No username or job title";
             return response;
-        } 
+        }
         return response;
     }
 
@@ -55,7 +61,7 @@ public class DigitalCVController {
     @PostMapping("/createcv")
     public MutationResponse createcv(@RequestBody DigitalCV data) {
         MutationResponse response = this.checkUsernameJobTitle(data);
-        if(response.isSuccess == false){
+        if (response.isSuccess == false) {
             return response;
         }
         DigitalCV saveData = digitalCVService.createDigitalCV(data);
@@ -68,7 +74,7 @@ public class DigitalCVController {
     @PutMapping("/updatecv/{cv_id}")
     public MutationResponse updateDigitalCV(@RequestBody DigitalCV data, @PathVariable Long cv_id) {
         MutationResponse response = this.checkUsernameJobTitle(data);
-        if(response.isSuccess == false){
+        if (response.isSuccess == false) {
             return response;
         }
         DigitalCV saveData = digitalCVService.updateDigitalCV(data, cv_id);
