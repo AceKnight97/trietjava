@@ -65,4 +65,11 @@ public class ProgrammingLanguage {
         this.level = level;
     }
 
+    public ProgrammingLanguage updateModel(ProgrammingLanguage curItem, ProgrammingLanguage item) {
+        curItem.setTechnicalSkillset(item.getTechnicalSkillset());
+        curItem.setCompetence(item.getCompetence());
+        curItem.setLevel(item.getLevel());
+        return curItem;
+    }
+
 }

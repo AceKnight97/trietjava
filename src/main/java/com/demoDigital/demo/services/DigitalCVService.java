@@ -42,30 +42,30 @@ public class DigitalCVService {
         return digitalCVRepo.findAll();
     }
 
-    public List<DigitalCV> getCVsByEmail(String email){
+    public List<DigitalCV> getCVsByEmail(String email) {
         return digitalCVRepo.getByEmail(email);
     }
 
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
-        String check = data.getPersonalInfo().getEmail();
-        System.out.println("CheckE: "+ check);
-        PersonalInfo personCV = personalInfoRepo.findByEmail(data.getPersonalInfo().getEmail());
-        if(personCV == null){
+        String email = data.getPersonalInfo().getEmail();
+        // System.out.println("check Email: "+ email);
+        PersonalInfo personCV = personalInfoRepo.findByEmail(email);
+        if (personCV == null) {
             System.out.println("personCV == null");
             personCV = data.getPersonalInfo();
             personalInfoRepo.save(personCV);
-        }else{
+        } else {
             System.out.println("personCV NOT null");
             data.setPersonalInfo(personCV);
             digitalCVRepo.save(data);
         }
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
-        
+
         List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
         lisDigitalCVs.add(newDigitalCV);
         personalInfoRepo.save(personCV);
-        
+
         for (Education item : newDigitalCV.getEducations()) {
             item.setDigitalCV(newDigitalCV);
             educationRespo.save(item);
@@ -100,33 +100,122 @@ public class DigitalCVService {
     }
 
     public DigitalCV updateDigitalCV(DigitalCV data, Long id) {
-        DigitalCV existData = digitalCVRepo.findById(id).get();
+        try {
+            DigitalCV existData = digitalCVRepo.findById(id).get();
 
-        // UPDATE BASIC
-        existData.setHobby(data.getHobby());
-        existData.setPhoto(data.getPhoto());
-        existData.setJobTitle(data.getJobTitle());
-        existData.setCvType(data.getCvType());
-        // UPDATE PERSONAL INFO
-        existData.setPersonalInfo(data.getPersonalInfo());
+            // UPDATE BASIC
+            existData.setHobby(data.getHobby());
+            existData.setPhoto(data.getPhoto());
+            existData.setJobTitle(data.getJobTitle());
+            existData.setCvType(data.getCvType());
+            // UPDATE PERSONAL INFO
+            PersonalInfo curPerson = existData.getPersonalInfo();
+            personalInfoRepo.save(curPerson.updateModel(curPerson, data.getPersonalInfo()));
+            existData.setPersonalInfo(curPerson);
 
-        // UPDATE EDUCATION
-        // existData.setEducations(data.getEducations());
-        List<Education> newEdu = new ArrayList<>();
-        List<Education> existEdu = existData.getEducations();
-
-        for (Education education : data.getEducations()) {
-            if (existEdu.stream().anyMatch(e -> e.getId() == education.getId())) {
-                Education curEdu = educationRespo.findById(education.getId()).get();
-                Education updateEdu = modelMapper.map(curEdu, Education.class);
-                newEdu.add(educationRespo.save(updateEdu));
-            } else {
-                newEdu.add(educationRespo.save(education));
+            // UPDATE EDUCATION
+            List<Education> newEdu = new ArrayList<>();
+            for (Education item : data.getEducations()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    Education curItem = educationRespo.findById(itemId).get();
+                    Education updateItem = curItem.updateModel(curItem, item);
+                    newEdu.add(educationRespo.save(updateItem));
+                } else {
+                    newEdu.add(educationRespo.save(item));
+                }
             }
-        }
-        existData.setEducations(newEdu);
+            existData.setEducations(newEdu);
 
-        return digitalCVRepo.save(existData);
+            // UPDATE CERTIFICATE
+            List<Certificate> newCerti = new ArrayList<>();
+            for (Certificate item : data.getCertificates()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    Certificate curItem = certificateRepo.findById(itemId).get();
+                    Certificate updateItem = curItem.updateModel(curItem, item);
+                    newCerti.add(certificateRepo.save(updateItem));
+                } else {
+                    newCerti.add(certificateRepo.save(item));
+                }
+            }
+            existData.setCertificates(newCerti);
+
+            // UPDATE WORKING EXPERIENCE
+            List<WorkingExperience> newWorkExp = new ArrayList<>();
+            for (WorkingExperience item : data.getWorkingExperiences()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    WorkingExperience curItem = workingExperienceRepo.findById(itemId).get();
+                    WorkingExperience updateItem = curItem.updateModel(curItem, item);
+                    newWorkExp.add(workingExperienceRepo.save(updateItem));
+                } else {
+                    newWorkExp.add(workingExperienceRepo.save(item));
+                }
+            }
+            existData.setWorkingExperiences(newWorkExp);
+
+            // UPDATE REFERENCE
+            List<ReferenceCV> newRefer = new ArrayList<>();
+            for (ReferenceCV item : data.getReferencecvs()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    ReferenceCV curItem = referenceCVRepo.findById(itemId).get();
+                    ReferenceCV updateItem = curItem.updateModel(curItem, item);
+                    newRefer.add(referenceCVRepo.save(updateItem));
+                } else {
+                    newRefer.add(referenceCVRepo.save(item));
+                }
+            }
+            existData.setReferencecvs(newRefer);
+
+            // UPDATE OTHER SKILLS
+            List<OtherSkill> newSkill = new ArrayList<>();
+            for (OtherSkill item : data.getOtherSkills()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    OtherSkill curItem = otherSkillRepo.findById(itemId).get();
+                    OtherSkill updateItem = curItem.updateModel(curItem, item);
+                    newSkill.add(otherSkillRepo.save(updateItem));
+                } else {
+                    newSkill.add(otherSkillRepo.save(item));
+                }
+            }
+            existData.setOtherSkills(newSkill);
+
+            // UPDATE PROJECT
+            List<Project> newProject = new ArrayList<>();
+            for (Project item : data.getProjects()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    Project curItem = projectRepo.findById(itemId).get();
+                    Project updateItem = curItem.updateModel(curItem, item);
+                    newProject.add(projectRepo.save(updateItem));
+                } else {
+                    newProject.add(projectRepo.save(item));
+                }
+            }
+            existData.setProjects(newProject);
+
+            // UPDATE PROJECT
+            List<ProgrammingLanguage> newProgramming = new ArrayList<>();
+            for (ProgrammingLanguage item : data.getProgrammingLanguages()) {
+                Long itemId = item.getId();
+                if (itemId != null) {
+                    ProgrammingLanguage curItem = programmingRepo.findById(itemId).get();
+                    ProgrammingLanguage updateItem = curItem.updateModel(curItem, item);
+                    newProgramming.add(programmingRepo.save(updateItem));
+                } else {
+                    newProgramming.add(programmingRepo.save(item));
+                }
+            }
+            existData.setProgrammingLanguages(newProgramming);
+
+            return digitalCVRepo.save(existData);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return null;
     }
     // PUT
 

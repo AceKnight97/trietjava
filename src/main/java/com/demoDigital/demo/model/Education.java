@@ -76,4 +76,11 @@ public class Education {
         this.toDate = toDate;
     }
 
+    public Education updateModel(Education curItem, Education item) {
+        curItem.setName(item.getName());
+        curItem.setMajor(item.getMajor());
+        curItem.setFromDate(item.getFromDate());
+        curItem.setToDate(item.getToDate());
+        return curItem;
+    }
 }

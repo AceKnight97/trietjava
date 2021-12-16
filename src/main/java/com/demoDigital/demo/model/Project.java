@@ -65,4 +65,11 @@ public class Project {
         this.description = description;
     }
 
+    public Project updateModel(Project curItem, Project item) {
+        curItem.setName(item.getName());
+        curItem.setLanguages(item.getLanguages());
+        curItem.setDescription(item.getDescription());
+        return curItem;
+    }
+
 }

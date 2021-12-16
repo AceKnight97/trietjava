@@ -32,14 +32,15 @@ public class PersonalInfo {
     private String linkedin;
     private String careerObjective;
     private String username;
+    @JsonIgnore
     private String password;
 
     public List<DigitalCV> getDigitalcvs() {
-    return this.digitalcvs;
+        return this.digitalcvs;
     }
 
     public void setDigitalcvs(List<DigitalCV> digitalcvs) {
-    this.digitalcvs = digitalcvs;
+        this.digitalcvs = digitalcvs;
     }
 
     public Long getId() {
@@ -122,4 +123,14 @@ public class PersonalInfo {
         this.password = password;
     }
 
+    public PersonalInfo updateModel(PersonalInfo curItem, PersonalInfo item) {
+        curItem.setPhone(item.getPhone());
+        curItem.setAddress(item.getAddress());
+        curItem.setGender(item.getGender());
+        curItem.setDob(item.getDob());
+        curItem.setLinkedin(item.getLinkedin());
+        curItem.setCareerObjective(item.getCareerObjective());
+        curItem.setUsername(item.getUsername());
+        return curItem;
+    }
 }

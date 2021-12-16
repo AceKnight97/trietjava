@@ -66,4 +66,11 @@ public class Certificate {
     public void setOrganizationName(String organizationName) {
         this.organizationName = organizationName;
     }
+
+    public Certificate updateModel(Certificate curItem, Certificate item) {
+        curItem.setDate(item.getDate());
+        curItem.setCertificateName(item.getCertificateName());
+        curItem.setOrganizationName(item.getOrganizationName());
+        return curItem;
+    }
 }

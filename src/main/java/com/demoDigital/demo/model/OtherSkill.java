@@ -46,4 +46,9 @@ public class OtherSkill {
         this.skill = skill;
     }
 
+    public OtherSkill updateModel(OtherSkill curItem, OtherSkill item) {
+        curItem.setSkill(item.getSkill());
+        return curItem;
+    }
+
 }

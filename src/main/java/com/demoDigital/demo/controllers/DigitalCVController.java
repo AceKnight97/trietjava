@@ -23,8 +23,6 @@ public class DigitalCVController {
     @Autowired
     DigitalCVService digitalCVService;
 
-    MutationResponse response = new MutationResponse();
-
     // GET
     @GetMapping("/{id}")
     public DigitalCV getCV(@PathVariable Long id) {
@@ -41,27 +39,41 @@ public class DigitalCVController {
         return digitalCVService.getCVsByEmail(email);
     }
 
+    public MutationResponse checkUsernameJobTitle(DigitalCV data){
+        MutationResponse response = new MutationResponse();
+        String username = data.getPersonalInfo().getUsername();
+        String jobTitle = data.getJobTitle();
+        if(username.isEmpty() || jobTitle.isEmpty()){
+            response.isSuccess = false;
+            response.message ="No username or job title";
+            return response;
+        } 
+        return response;
+    }
+
     // POST
     @PostMapping("/createcv")
     public MutationResponse createcv(@RequestBody DigitalCV data) {
-        DigitalCV saveData = digitalCVService.createDigitalCV(data);
-        if (saveData == null) {
-            response.isSuccess = false;
-        } else {
-            response.data = saveData;
+        MutationResponse response = this.checkUsernameJobTitle(data);
+        if(response.isSuccess == false){
+            return response;
         }
+        DigitalCV saveData = digitalCVService.createDigitalCV(data);
+        response.isSuccess = saveData != null;
+        response.data = saveData;
         return response;
     }
 
     // PUST
-    @PutMapping("/updatecv/{id}")
-    public MutationResponse createUser(@RequestBody DigitalCV data, @PathVariable Long id) {
-        DigitalCV saveData = digitalCVService.updateDigitalCV(data, id);
-        if (saveData == null) {
-            response.isSuccess = false;
-        } else {
-            response.data = saveData;
+    @PutMapping("/updatecv/{cv_id}")
+    public MutationResponse updateDigitalCV(@RequestBody DigitalCV data, @PathVariable Long cv_id) {
+        MutationResponse response = this.checkUsernameJobTitle(data);
+        if(response.isSuccess == false){
+            return response;
         }
+        DigitalCV saveData = digitalCVService.updateDigitalCV(data, cv_id);
+        response.isSuccess = saveData != null;
+        response.data = saveData;
         return response;
     }
 

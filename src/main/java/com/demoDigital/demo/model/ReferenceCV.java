@@ -74,4 +74,11 @@ public class ReferenceCV {
         this.phone = phone;
     }
 
+    public ReferenceCV updateModel(ReferenceCV curItem, ReferenceCV item) {
+        curItem.setReferenceName(item.getReferenceName());
+        curItem.setCompanyName(item.getCompanyName());
+        curItem.setEmail(item.getEmail());
+        curItem.setPhone(item.getPhone());
+        return curItem;
+    }
 }

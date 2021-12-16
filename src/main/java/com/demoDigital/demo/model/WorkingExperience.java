@@ -86,4 +86,12 @@ public class WorkingExperience {
         this.jobDescription = jobDescription;
     }
 
+    public WorkingExperience updateModel(WorkingExperience curItem, WorkingExperience item) {
+        curItem.setFromDate(item.getFromDate());
+        curItem.setToDate(item.getToDate());
+        curItem.setCompanyName(item.getCompanyName());
+        curItem.setJobTitle(item.getJobTitle());
+        curItem.setJobDescription(item.getJobDescription());
+        return curItem;
+    }
 }
