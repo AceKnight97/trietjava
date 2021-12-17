@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Triet Java</title>
+    <script>
+      function onFileChanged(event) {
+        console.log({ event });
+      }
+      function myFunction() {
+        const file = document.getElementById("demo").files[0];
+        const value = document.getElementById("demo").value;
+        document.getElementById("file").src = value;
+        console.log({ file, value });
+      }
+    </script>
     <style>
       body {
         width: 100%;
@@ -13,9 +24,18 @@
         color: chocolate;
         font-size: 50px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0;
+      }
+      .input-ct {
+        margin-top: 3rem;
+      }
+      .btn-ct {
+        margin-top: 1.5rem;
+        width: 100px;
+        height: 100px;
       }
     </style>
   </head>
@@ -23,5 +43,13 @@
     Hello Triet!
     <br />
     How are you today?
+    <!-- <img src={this.file} id="file"  ></img> 
+    <input
+      type="file"
+      change="onFileChanged($event)"
+      id="demo"
+      class="input-ct"
+    />
+    <button type="button" onclick="myFunction()" class="btn-ct">Try it</button> -->
   </body>
 </html>

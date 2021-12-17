@@ -33,10 +33,6 @@ public class ImageService {
     @Autowired
     ImageRepository imageRepository;
 
-    public void updateImage(DigitalCV data, DigitalCV existData) {
-
-    }
-
     public ImageModel getImage(String imageName) throws IOException {
         final Optional<ImageModel> retrievedImage = imageRepository.findByName(imageName);
         ImageModel img = new ImageModel(retrievedImage.get().getName(), retrievedImage.get().getType(),

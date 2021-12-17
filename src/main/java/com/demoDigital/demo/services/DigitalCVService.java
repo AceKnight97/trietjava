@@ -1,12 +1,29 @@
 package com.demoDigital.demo.services;
 
-import com.demoDigital.demo.model.*;
-import com.demoDigital.demo.repository.*;
+import java.util.List;
+
+import com.demoDigital.demo.model.Certificate;
+import com.demoDigital.demo.model.DigitalCV;
+import com.demoDigital.demo.model.Education;
+import com.demoDigital.demo.model.MutationResponse;
+import com.demoDigital.demo.model.OtherSkill;
+import com.demoDigital.demo.model.PersonalInfo;
+import com.demoDigital.demo.model.ProgrammingLanguage;
+import com.demoDigital.demo.model.Project;
+import com.demoDigital.demo.model.ReferenceCV;
+import com.demoDigital.demo.model.WorkingExperience;
+import com.demoDigital.demo.repository.CertificateRepository;
+import com.demoDigital.demo.repository.DigitalCVRepository;
+import com.demoDigital.demo.repository.EducationRepository;
+import com.demoDigital.demo.repository.OtherSkillRepository;
+import com.demoDigital.demo.repository.PersonalInfoRepository;
+import com.demoDigital.demo.repository.ProgrammingRepository;
+import com.demoDigital.demo.repository.ProjectRepository;
+import com.demoDigital.demo.repository.ReferenceCVRepository;
+import com.demoDigital.demo.repository.WorkingExperienceRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class DigitalCVService {
@@ -73,7 +90,6 @@ public class DigitalCVService {
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
         String email = data.getPersonalInfo().getEmail();
-        // System.out.println("check Email: "+ email);
         PersonalInfo personCV = personalInfoRepo.findByEmail(email);
         if (personCV == null) {
             System.out.println("personCV == null");
@@ -132,6 +148,7 @@ public class DigitalCVService {
             // UPDATE BASIC
             existData.setHobby(data.getHobby());
             existData.setJobTitle(data.getJobTitle());
+            // UPDATE Image
             // existData.setPhoto(data.getPhoto());
             // existData.setCvType(data.getCvType());
             // existData.setIsActive(data.getIsActive());
@@ -164,6 +181,7 @@ public class DigitalCVService {
             return digitalCVRepo.save(existData);
         } catch (Exception e) {
             // TODO: handle exception
+            System.out.println("Err: " + e);
         }
         return null;
     }
@@ -186,8 +204,36 @@ public class DigitalCVService {
     public MutationResponse changeCVType(String email, Long id, String cvType) {
         DigitalCV existData = digitalCVRepo.findById(id).get();
         MutationResponse response = this.validateUpdateCV(email, id, existData);
+        if (response.isSuccess == false) {
+            return response;
+        }
+        if (cvType == null || cvType == "") {
+            response.isSuccess = false;
+            response.message = "No type to change!";
+            return response;
+        }
         existData.setCvType(cvType);
-        response.isSuccess = digitalCVRepo.save(existData) != null;
+        DigitalCV data = digitalCVRepo.save(existData);
+        response.isSuccess = data != null;
+        response.data = data;
+        return response;
+    }
+
+    public MutationResponse changePhoto(String email, Long id, String photo) {
+        DigitalCV existData = digitalCVRepo.findById(id).get();
+        MutationResponse response = this.validateUpdateCV(email, id, existData);
+        if (response.isSuccess == false) {
+            return response;
+        }
+        if (photo == null || photo == "") {
+            response.isSuccess = false;
+            response.message = "No photo to change!";
+            return response;
+        }
+        existData.setPhoto(photo);
+        DigitalCV data = digitalCVRepo.save(existData);
+        response.isSuccess = data != null;
+        response.data = data;
         return response;
     }
 
