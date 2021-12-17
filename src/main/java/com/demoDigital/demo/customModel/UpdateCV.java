@@ -1,5 +1,6 @@
 package com.demoDigital.demo.customModel;
 
-public class DeleteCV {
+public class UpdateCV {
     public String email;
+    public String cvType;
 }

@@ -1,13 +1,11 @@
 package com.demoDigital.demo.controllers;
 
-import com.demoDigital.demo.customModel.DeleteCV;
+import com.demoDigital.demo.customModel.UpdateCV;
 import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.model.OtherSkill;
-import com.demoDigital.demo.repository.DigitalCVRepository;
 import com.demoDigital.demo.services.DigitalCVService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -85,9 +83,17 @@ public class DigitalCVController {
     }
 
     @PutMapping("/deletecv/{cv_id}")
-    public MutationResponse deleteDigitalCV(@RequestBody DeleteCV body, @PathVariable Long cv_id) {
+    public MutationResponse deleteDigitalCV(@RequestBody UpdateCV body, @PathVariable Long cv_id) {
         String email = body.email;
         MutationResponse response = digitalCVService.deleteDigitalCV(email, cv_id);
+        return response;
+    }
+
+    @PutMapping("/changetype/{cv_id}")
+    public MutationResponse changeCVType(@RequestBody UpdateCV body, @PathVariable Long cv_id) {
+        String email = body.email;
+        String cvType = body.cvType;
+        MutationResponse response = digitalCVService.changeCVType(email, cv_id, cvType);
         return response;
     }
 

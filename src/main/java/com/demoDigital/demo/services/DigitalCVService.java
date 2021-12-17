@@ -6,7 +6,6 @@ import com.demoDigital.demo.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,7 +47,15 @@ public class DigitalCVService {
 
     // GET
     public DigitalCV getDigitalCV(Long id) {
-        return digitalCVRepo.findById(id).get();
+        try {
+            DigitalCV res = digitalCVRepo.findById(id).get();
+            return res;
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Failed to get CVid: " + id);
+            System.out.println("Err: " + e);
+        }
+        return null;
     }
 
     public List<DigitalCV> getDigitalCVs() {
@@ -124,9 +131,10 @@ public class DigitalCVService {
 
             // UPDATE BASIC
             existData.setHobby(data.getHobby());
-            existData.setPhoto(data.getPhoto());
             existData.setJobTitle(data.getJobTitle());
-            existData.setCvType(data.getCvType());
+            // existData.setPhoto(data.getPhoto());
+            // existData.setCvType(data.getCvType());
+            // existData.setIsActive(data.getIsActive());
             // UPDATE PERSONAL INFO
             PersonalInfo curPerson = existData.getPersonalInfo();
             personalInfoRepo.save(curPerson.updateModel(curPerson, data.getPersonalInfo()));
@@ -160,10 +168,8 @@ public class DigitalCVService {
         return null;
     }
 
-    // DELETE
-    public MutationResponse deleteDigitalCV(String email, Long id) {
+    public MutationResponse validateUpdateCV(String email, Long id, DigitalCV existData) {
         MutationResponse response = new MutationResponse();
-        DigitalCV existData = digitalCVRepo.findById(id).get();
         String cvEmail = existData.getPersonalInfo().getEmail();
         Boolean isRightEmail = cvEmail.equals(email);
         if (existData == null || !isRightEmail) {
@@ -174,9 +180,23 @@ public class DigitalCVService {
             response.message = "No exist data or wrong user email!";
             return response;
         }
+        return response;
+    }
+
+    public MutationResponse changeCVType(String email, Long id, String cvType) {
+        DigitalCV existData = digitalCVRepo.findById(id).get();
+        MutationResponse response = this.validateUpdateCV(email, id, existData);
+        existData.setCvType(cvType);
+        response.isSuccess = digitalCVRepo.save(existData) != null;
+        return response;
+    }
+
+    // DELETE
+    public MutationResponse deleteDigitalCV(String email, Long id) {
+        DigitalCV existData = digitalCVRepo.findById(id).get();
+        MutationResponse response = this.validateUpdateCV(email, id, existData);
         existData.setIsActive(false);
-        digitalCVRepo.save(existData);
-        response.isSuccess = true;
+        response.isSuccess = digitalCVRepo.save(existData) != null;
         return response;
     }
 

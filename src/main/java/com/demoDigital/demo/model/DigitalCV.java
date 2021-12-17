@@ -48,8 +48,11 @@ public class DigitalCV {
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<OtherSkill> otherSkills = new ArrayList<>();
 
-    private String hobby;
+    // @ManyToOne(cascade = CascadeType.ALL)
+    // private ImageModel photo;
     private String photo;
+
+    private String hobby;
     private String jobTitle;
     private String cvType;
     private Boolean isActive;
