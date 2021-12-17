@@ -11,7 +11,7 @@ import com.demoDigital.demo.model.DigitalCV;
 @Repository
 public interface DigitalCVRepository extends JpaRepository<DigitalCV, Long> {
 
-	@Query(value = "SELECT * FROM digitalcvs cv join personal_info info on cv.personal_info_id = info.id where info.email LIKE :email", nativeQuery= true)
+	@Query(value = "SELECT * FROM digitalcvs cv join personal_info info on cv.personal_info_id = info.id where info.email LIKE :email AND cv.is_active = TRUE", nativeQuery = true)
 	List<DigitalCV> getByEmail(String email);
 
 }

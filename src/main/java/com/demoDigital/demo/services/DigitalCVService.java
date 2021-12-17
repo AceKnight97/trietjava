@@ -78,6 +78,7 @@ public class DigitalCVService {
             digitalCVRepo.save(data);
         }
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
+        newDigitalCV.setIsActive(true);
 
         List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
         lisDigitalCVs.add(newDigitalCV);
@@ -116,6 +117,7 @@ public class DigitalCVService {
         return newDigitalCV;
     }
 
+    // PUT
     public DigitalCV updateDigitalCV(DigitalCV data, Long id) {
         try {
             DigitalCV existData = digitalCVRepo.findById(id).get();
@@ -157,15 +159,19 @@ public class DigitalCVService {
         }
         return null;
     }
-    // PUT
 
     // DELETE
-    public MutationResponse deleteDigitalCV(Long id) {
-        DigitalCV existData = digitalCVRepo.findById(id).get();
+    public MutationResponse deleteDigitalCV(String email, Long id) {
         MutationResponse response = new MutationResponse();
-        if (existData == null) {
+        DigitalCV existData = digitalCVRepo.findById(id).get();
+        String cvEmail = existData.getPersonalInfo().getEmail();
+        Boolean isRightEmail = cvEmail.equals(email);
+        if (existData == null || !isRightEmail) {
+            System.out.println("cvEmail: " + cvEmail);
+            System.out.println("email: " + email);
+            System.out.println("isRightEmail: " + isRightEmail);
             response.isSuccess = false;
-            response.message = "No exist data!";
+            response.message = "No exist data or wrong user email!";
             return response;
         }
         existData.setIsActive(false);

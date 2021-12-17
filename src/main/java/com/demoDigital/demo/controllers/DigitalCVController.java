@@ -1,5 +1,6 @@
 package com.demoDigital.demo.controllers;
 
+import com.demoDigital.demo.customModel.DeleteCV;
 import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.model.OtherSkill;
@@ -80,6 +81,13 @@ public class DigitalCVController {
         DigitalCV saveData = digitalCVService.updateDigitalCV(data, cv_id);
         response.isSuccess = saveData != null;
         response.data = saveData;
+        return response;
+    }
+
+    @PutMapping("/deletecv/{cv_id}")
+    public MutationResponse deleteDigitalCV(@RequestBody DeleteCV body, @PathVariable Long cv_id) {
+        String email = body.email;
+        MutationResponse response = digitalCVService.deleteDigitalCV(email, cv_id);
         return response;
     }
 
