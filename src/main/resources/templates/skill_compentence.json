@@ -1,1203 +1,208 @@
 {
     "SKILL_COMPETENCE": [
         {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Project Management"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Core Java, Java, Java Script"
-        }, 
-        {
-            "skillset": "Mobile Apps Development", 
-            "competence": "Android App Development, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, HTML5, React JS, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Core Java, DC / CC / IT PEP Process, iOS, Java, Java Script, Java Spring, Oracle SQL Programming, Project Management, Restful web Services like Springboot, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft ERP", 
-            "competence": "Microsoft T&L D365-FO"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Calibration - Vehicle Functions"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, Project Management, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Java Script, React JS, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring, MySQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "ITIL Service Management, Oracle DB, Oracle SQL Programming"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Leadership, Project Management"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "competence": "Java Spring, JavaScript"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Cyber Security - non-HW based, Oracle SQL Programming, SQL & PL/SQL, Web Services"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Sharepoint, Sharepoint /Office 365"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "AI, React JS, Sharepoint"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "DC / CC / IT PEP Process, Project Management"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Angular, Hadoop, Oracle DB"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Oracle SQL Programming, SQL & PL/SQL, Visual Basic, Web Services"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Agile PEP, Agile-SAFe, Core Java, D2K, DC / CC / IT PEP Process, Oracle SQL Programming, Project Management, SQL & PL/SQL, Visual Basic, Visual Studio"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Sharepoint, Sharepoint /Office 365, Sharepoint/O365 Migration"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, React JS, SQL & PL/SQL, SQLite, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Mobile Apps Development", 
-            "competence": "Android App Development, iOS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "SpringBoot"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, React JS, SQL & PL/SQL, SQLite, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Python, Web Development - Python"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, React JS, SQL & PL/SQL, SQLite, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "competence": "Java, JavaScript, Python 3"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "AI, Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "ASP.NET Core, ASP.NET MVC, React JS, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Computer Vision, Natural Language Processing, Oracle DB"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "ASP.NET, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring, React JS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring, Tacton CPQ Technical"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Oracle SQL Programming, React JS, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Sharepoint, Sharepoint /Office 365"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring, Project Management, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Management and Support", 
-            "competence": "ASP.NET, Project Management, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "SpringBoot"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Oracle (11g and above), Oracle DB, Oracle SQL Programming, SQL & PL/SQL, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Project Management"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Project Management"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management, SAP Fiori, SAP UI5"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "SpringBoot"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, React JS, SQL & PL/SQL, SQLite, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "IT Service Management, ITIL Service Management, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "ASP.NET, ASP.NET Core"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Oracle (11g and above), Oracle DB, Oracle SQL Programming, SQL & PL/SQL, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management, Requirements Engineering"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Angular, ASP.NET Core"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring, React JS"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, React JS, SQL & PL/SQL, SQLite, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "DC / CC / IT PEP Process, ITIL Service Management, Project Management, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": ".NET Framework, React JS, Sharepoint"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Infrastructure", 
-            "competence": "Networking, Windows/Linux Server OS"
-        }, 
-        {
-            "competence": "Web Applications"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Software Integration"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management"
-        }, 
-        {
-            "skillset": "Mobile Apps Development", 
-            "competence": "Android App Development"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "SpringBoot"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Power BI_Obsolete, SQLServer, SSAS, SSIS"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Tableau"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, Java Script"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Microsoft ERP", 
-            "competence": "Microsoft ( M&P)¸ D365-FO"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "AI, Java Script"
-        }, 
-        {
-            "competence": "Python 3"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, Oracle SQL Programming, REST API - Web App and Web API, Restful web Services like Springboot, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Hadoop, SpringBoot"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Angular"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "React JS, Sharepoint"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "Android App Development, Project Management"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "ITIL Service Management, Oracle DB, Oracle SQL Programming"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Project Management"
-        }, 
-        {
-            "skillset": "Microsoft ERP", 
-            "competence": "Microsoft CRM Online Technical"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Automation Anywhere, Cucumber test automation, HP UFT / QTB - Automation Tool, Robot test automation, Robotic Process Automation, System Testing, Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Robot test automation, Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "React JS, Sharepoint"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, HTML5, REST API - Web App and Web API, SCCM, Web Services, WebMethods"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Project Management, Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, SQL & PL/SQL, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF)"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Infrastructure", 
-            "competence": "Networking, Windows/Linux Server OS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Project Management"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "ASP.NET, Sharepoint"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Project Management, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "ASP.NET, Oracle SQL Programming, SQL & PL/SQL, Visual Basic, Web Services, Windows Presentation Foundation (WPF)"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "competence": "HTML, HTML5, JavaScript"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Robot test automation, Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, Core Java, Java, Java Script, Java Spring, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, Java Script, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Elastic Search, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Project Management"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "SAP Fiori, SAP UI5"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": ".NET Core, Azure"
-        }, 
-        {
-            "skillset": "Unit Testing"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "ITIL Service Management, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, SpringBoot"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Calibration - Vehicle Functions, ITIL Service Management"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Oracle SQL Programming, SQL & PL/SQL, Visual Basic, Web Services, Windows Presentation Foundation (WPF)"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Mobile Apps Development", 
-            "competence": "Android App Development, iOS"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, ITIL Service Management, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, SQL & PL/SQL, Windows Communication Foundation (WCF), Windows IIS, Windows Presentation Foundation (WPF)"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "competence": "JavaScript, React, React.js"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script"
-        }, 
-        {
-            "skillset": "Data Science and Machine Learning", 
-            "competence": "Computer Vision, Natural Language Processing"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, SpringBoot"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft ERP"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Web Application Development", 
-            "competence": "ASP.NET Core"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Performance Testing, Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Angular, Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "competence": "Java, Java Script"
-        }, 
-        {
-            "skillset": "IT - Service Management Tools", 
-            "competence": "ITIL Service Management, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development"
-        }, 
-        {
-            "skillset": "Microsoft Application Development"
-        }, 
-        {
-            "skillset": "Java Application Development"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "ITIL Service Management, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "SCCM"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "React JS, Sharepoint"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Data Vault, Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Automation, Testing and Validation"
-        }, 
-        {
-            "skillset": "Data Engineering", 
-            "competence": "Oracle DB, Oracle SQL Programming, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Project Management", 
-            "competence": "ASP.NET, ASP.NET Core, DC / CC / IT PEP Process, Microsoft .Net (RFID Application), Oracle SQL Programming, PostGreSQL, Postman, Project Management, SCCM, SQL & PL/SQL, SQLite, Windows 10 Administration, Windows IIS, Windows Presentation Foundation (WPF), Windows Server Administration"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "ITIL Service Management, SAP Fiori, SAP Netweaver"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft ERP", 
-            "competence": "Microsoft D365 FO - Technical"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Java Script, Testing and Automation"
-        }, 
-        {
-            "skillset": "Project Management"
-        }, 
-        {
-            "skillset": "IT Validation & Verification", 
-            "competence": "Testing and Validation"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, ASP.NET, ASP.NET Core, SQL & PL/SQL"
-        }, 
-        {
-            "skillset": "Java Application Development", 
-            "competence": "Core Java, Java, Java Script, Java Spring"
-        }, 
-        {
-            "skillset": "Microsoft Application Development", 
-            "competence": "Angular, Oracle SQL Programming, SQL & PL/SQL, Visual Basic, Web Services, Windows Presentation Foundation (WPF)"
+            "skillset": "Data Science and Machine Learning",
+            "competence": [
+                "Computer Vision",
+                "Natural Language Processing"
+            ]
+        },
+        {
+            "skillset": "Web Application Development",
+            "competence": [
+                "Core Java",
+                "Java",
+                "Java Script",
+                "Leadership",
+                "Project Management",
+                "Python",
+                "Web Development - Python",
+                "ASP.NET",
+                "Java Spring",
+                "Angular",
+                "ASP.NET Core",
+                "React JS",
+                ".NET Core",
+                "Azure"
+            ]
+        },
+        {
+            "skillset": "Mobile Apps Development",
+            "competence": [
+                "Android App Development",
+                "Java",
+                "Java Spring",
+                "iOS"
+            ]
+        },
+        {
+            "skillset": "Java Application Development",
+            "competence": [
+                "Java",
+                "Java Script",
+                "Java Spring",
+                "Core Java",
+                "Calibration - Vehicle Functions",
+                "Angular",
+                "MySQL",
+                "SpringBoot",
+                "AI",
+                "React JS",
+                "Tacton CPQ Technical",
+                "ITIL Service Management",
+                "SAP Fiori",
+                "SAP UI5",
+                "Requirements Engineering",
+                "Hadoop",
+                "Project Management",
+                "Elastic Search",
+                "SAP Netweaver",
+                "Testing and Automation"
+            ]
+        },
+        {
+            "skillset": "IT Validation & Verification",
+            "competence": [
+                "Testing and Automation",
+                "Testing and Validation",
+                "Automation Anywhere",
+                "Cucumber test automation",
+                "HP UFT / QTB - Automation Tool",
+                "Robot test automation",
+                "Robotic Process Automation",
+                "System Testing",
+                "Project Management",
+                "Performance Testing"
+            ]
+        },
+        {
+            "skillset": "Microsoft Application Development",
+            "competence": [
+                "Angular",
+                "ASP.NET",
+                "ASP.NET Core",
+                "HTML5",
+                "React JS",
+                "SQL & PL/SQL",
+                "Java Script",
+                "Cyber Security - non-HW based",
+                "Oracle SQL Programming",
+                "Web Services",
+                "Sharepoint",
+                "Sharepoint /Office 365",
+                "AI",
+                "Visual Basic",
+                "Sharepoint/O365 Migration",
+                "Core Java",
+                "Java",
+                "Java Spring",
+                "SQLite",
+                "Windows Communication Foundation (WCF)",
+                "Windows IIS",
+                "Windows Presentation Foundation (WPF)",
+                "Windows Server Administration",
+                "SCCM",
+                "ASP.NET MVC",
+                "Oracle (11g and above)",
+                "Oracle DB",
+                "IT Service Management",
+                "ITIL Service Management",
+                ".NET Framework",
+                "REST API - Web App and Web API",
+                "Restful web Services like Springboot",
+                "WebMethods"
+            ]
+        },
+        {
+            "skillset": "Project Management",
+            "competence": [
+                "Core Java",
+                "DC / CC / IT PEP Process",
+                "iOS",
+                "Java",
+                "Java Script",
+                "Java Spring",
+                "Oracle SQL Programming",
+                "Project Management",
+                "Restful web Services like Springboot",
+                "SQL & PL/SQL",
+                "Angular",
+                "ASP.NET",
+                "ASP.NET Core",
+                "Agile PEP",
+                "Agile-SAFe",
+                "D2K",
+                "Visual Basic",
+                "Visual Studio",
+                "ITIL Service Management",
+                "Android App Development",
+                "Sharepoint",
+                "SAP Fiori",
+                "SAP UI5",
+                "Microsoft .Net (RFID Application)",
+                "PostGreSQL",
+                "Postman",
+                "SCCM",
+                "SQLite",
+                "Windows 10 Administration",
+                "Windows IIS",
+                "Windows Presentation Foundation (WPF)",
+                "Windows Server Administration"
+            ]
+        },
+        {
+            "skillset": "Microsoft ERP",
+            "competence": [
+                "Microsoft T&L D365-FO",
+                "Microsoft ( M&P)¸ D365-FO",
+                "Microsoft CRM Online Technical",
+                "Microsoft D365 FO - Technical"
+            ]
+        },
+        {
+            "skillset": "Data Engineering",
+            "competence": [
+                "Data Vault",
+                "Oracle DB",
+                "Oracle SQL Programming",
+                "SQL & PL/SQL",
+                "ITIL Service Management",
+                "Power BI_Obsolete",
+                "SQLServer",
+                "SSAS",
+                "SSIS",
+                "Angular",
+                "Hadoop",
+                "Computer Vision",
+                "Natural Language Processing",
+                "Tableau"
+            ]
+        },
+        {
+            "skillset": "IT - Service Management Tools",
+            "competence": [
+                "ITIL Service Management",
+                "Oracle SQL Programming",
+                "SQL & PL/SQL"
+            ]
+        },
+        {
+            "skillset": "Management and Support",
+            "competence": [
+                "ASP.NET",
+                "Project Management",
+                "SQL & PL/SQL"
+            ]
+        },
+        {
+            "skillset": "IT Infrastructure",
+            "competence": [
+                "Networking",
+                "Windows/Linux Server OS"
+            ]
         }
-    ]
+    ],
+    "TEST":{
+        "a":"b"
+    }
 }
