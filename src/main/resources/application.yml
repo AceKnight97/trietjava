@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: https://stfs.bosch.com/adfs
+        registration:
+          oidc:
+            client-id: 3da370e7-29f7-4ff0-bf9e-89b92cd235bd
+            client-secret: 905HiQ0YSuQGNg8S2IHXlwe9PHFX3ItfFcrrLD80
+            scope: openid
