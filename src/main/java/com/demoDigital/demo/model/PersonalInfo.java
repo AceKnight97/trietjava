@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.demoDigital.demo.customModel.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;

@@ -1,5 +1,7 @@
 package com.demoDigital.demo.controllers;
 
+import java.util.List;
+
 import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.model.PersonalInfo;
 import com.demoDigital.demo.services.PersonalInfoService;
@@ -9,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/personalinfo")

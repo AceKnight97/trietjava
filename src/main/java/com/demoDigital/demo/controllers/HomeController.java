@@ -12,6 +12,11 @@ public class HomeController {
     return "index";
   }
 
+  @RequestMapping("/masterdata")
+  public String masterdata() {
+    return "skill_compentence.json";
+  }
+
   @RequestMapping("/hello")
   @ResponseBody
   public String hello() {
