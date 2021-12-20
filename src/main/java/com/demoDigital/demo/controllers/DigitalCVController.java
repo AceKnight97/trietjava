@@ -9,7 +9,6 @@ import com.demoDigital.demo.model.OtherSkill;
 import com.demoDigital.demo.services.DigitalCVService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,6 +45,18 @@ public class DigitalCVController {
         return digitalCVService.getTest();
     }
 
+    public MutationResponse checkValidPhoto(DigitalCV data) {
+        MutationResponse response = new MutationResponse();
+        String photo = data.getPhoto().toLowerCase();
+        Boolean isValidPhoto = photo.contains("data:image/jpeg;base64") || photo.contains("data:image/png;base64");
+        if (!isValidPhoto) {
+            response.isSuccess = false;
+            response.message = "Invalid image type!";
+            return response;
+        }
+        return response;
+    }
+
     public MutationResponse checkUsernameJobTitle(DigitalCV data) {
         MutationResponse response = new MutationResponse();
         String username = data.getPersonalInfo().getUsername();
@@ -55,6 +66,7 @@ public class DigitalCVController {
             response.message = "No username or job title";
             return response;
         }
+        response = this.checkValidPhoto(data);
         return response;
     }
 
