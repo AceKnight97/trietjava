@@ -2,10 +2,12 @@ package Group4.DigitalCV.controllers;
 
 import java.util.List;
 
+import Group4.DigitalCV.customModel.ManagementCV;
 import Group4.DigitalCV.customModel.UpdateCV;
 import Group4.DigitalCV.model.DigitalCV;
 import Group4.DigitalCV.model.MutationResponse;
 import Group4.DigitalCV.model.OtherSkill;
+import Group4.DigitalCV.model.PersonalInfo;
 import Group4.DigitalCV.services.DigitalCVService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,11 @@ public class DigitalCVController {
         return digitalCVService.getCVsByEmail(email);
     }
 
+    @GetMapping("/management/{email}")
+    public List<ManagementCV> getCVManagement(@PathVariable String email) {
+        return digitalCVService.getCVManagement(email);
+    }
+
     @GetMapping("/test")
     public List<OtherSkill> getTest() {
         return digitalCVService.getTest();
@@ -59,21 +66,26 @@ public class DigitalCVController {
 
     public MutationResponse checkUsernameJobTitle(DigitalCV data) {
         MutationResponse response = new MutationResponse();
-        String username = data.getPersonalInfo().getUsername();
+        PersonalInfo person = data.getPersonalInfo();
+        String username = person.getUsername();
         String jobTitle = data.getJobTitle();
         if (username == null || jobTitle == null) {
             response.isSuccess = false;
             response.message = "No username or job title";
             return response;
         }
-        response = this.checkValidPhoto(data);
         return response;
     }
 
     // POST
     @PostMapping("/createcv")
     public MutationResponse createcv(@RequestBody DigitalCV data) {
+        System.out.println(data.toString());
         MutationResponse response = this.checkUsernameJobTitle(data);
+        if (response.isSuccess == false) {
+            return response;
+        }
+        response = this.checkValidPhoto(data);
         if (response.isSuccess == false) {
             return response;
         }
@@ -113,9 +125,22 @@ public class DigitalCVController {
 
     @PutMapping("/changephoto/{cv_id}")
     public MutationResponse changePhoto(@RequestBody UpdateCV body, @PathVariable Long cv_id) {
-        String email = body.email;
-        String photo = body.photo;
-        MutationResponse response = digitalCVService.changePhoto(email, cv_id, photo);
+        MutationResponse response = new MutationResponse();
+        try {
+            String email = body.email;
+            String photo = body.photo.toLowerCase();
+            Boolean isValidPhoto = photo.contains("data:image/jpeg;base64") || photo.contains("data:image/png;base64");
+            if (!isValidPhoto) {
+                response.isSuccess = false;
+                response.message = "Invalid image type!";
+                return response;
+            }
+            response = digitalCVService.changePhoto(email, cv_id, photo);
+            return response;
+        } catch (Exception e) {
+            // TODO: handle exception
+            response.isSuccess = false;
+        }
         return response;
     }
 

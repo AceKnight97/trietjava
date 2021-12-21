@@ -1,5 +1,6 @@
 package Group4.DigitalCV.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import Group4.DigitalCV.customModel.ManagementCV;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -61,6 +63,8 @@ public class DigitalCV {
     private String jobTitle;
     private String cvType;
     private Boolean isActive;
+    private LocalDateTime createdAt;
+    private LocalDateTime lastModified;
 
     public Boolean isIsActive() {
         return this.isActive;
@@ -176,5 +180,30 @@ public class DigitalCV {
 
     public void setCvType(String cvType) {
         this.cvType = cvType;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getLastModified() {
+        return this.lastModified;
+    }
+
+    public void setLastModified(LocalDateTime lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    public ManagementCV getCVManagement() {
+        ManagementCV res = new ManagementCV();
+        res.setId(this.id);
+        res.setCvType(this.cvType);
+        res.setCreatedAt(this.createdAt);
+        res.setLastModified(this.lastModified);
+        return res;
     }
 }

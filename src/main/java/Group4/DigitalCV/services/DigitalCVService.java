@@ -1,7 +1,10 @@
 package Group4.DigitalCV.services;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
+import Group4.DigitalCV.customModel.ManagementCV;
 import Group4.DigitalCV.model.Certificate;
 import Group4.DigitalCV.model.DigitalCV;
 import Group4.DigitalCV.model.Education;
@@ -87,6 +90,15 @@ public class DigitalCVService {
         return digitalCVRepo.getByEmail(email);
     }
 
+    public List<ManagementCV> getCVManagement(String email) {
+        List<DigitalCV> list = digitalCVRepo.getByEmail(email);
+        List<ManagementCV> res = new ArrayList<>();
+        for (DigitalCV item : list) {
+            res.add(item.getCVManagement());
+        }
+        return res;
+    }
+
     // POST
     public DigitalCV createDigitalCV(DigitalCV data) {
         String email = data.getPersonalInfo().getEmail();
@@ -101,7 +113,6 @@ public class DigitalCVService {
             digitalCVRepo.save(data);
         }
         DigitalCV newDigitalCV = digitalCVRepo.save(data);
-        newDigitalCV.setIsActive(true);
 
         List<DigitalCV> lisDigitalCVs = personCV.getDigitalcvs();
         lisDigitalCVs.add(newDigitalCV);
@@ -136,6 +147,8 @@ public class DigitalCVService {
             otherSkillRepo.save(item);
         }
 
+        newDigitalCV.setIsActive(true);
+        newDigitalCV.setCreatedAt(LocalDateTime.now());
         digitalCVRepo.save(newDigitalCV);
         return newDigitalCV;
     }
@@ -178,6 +191,8 @@ public class DigitalCVService {
             // UPDATE PROGRAMMING LANGUAGES
             projectService.updateProject(data, existData);
 
+            existData.setLastModified(LocalDateTime.now());
+
             return digitalCVRepo.save(existData);
         } catch (Exception e) {
             // TODO: handle exception
@@ -213,6 +228,7 @@ public class DigitalCVService {
             return response;
         }
         existData.setCvType(cvType);
+        existData.setLastModified(LocalDateTime.now());
         DigitalCV data = digitalCVRepo.save(existData);
         response.isSuccess = data != null;
         response.data = data;
@@ -231,6 +247,7 @@ public class DigitalCVService {
             return response;
         }
         existData.setPhoto(photo);
+        existData.setLastModified(LocalDateTime.now());
         DigitalCV data = digitalCVRepo.save(existData);
         response.isSuccess = data != null;
         response.data = data;
@@ -242,6 +259,7 @@ public class DigitalCVService {
         DigitalCV existData = digitalCVRepo.findById(id).get();
         MutationResponse response = this.validateUpdateCV(email, id, existData);
         existData.setIsActive(false);
+        existData.setLastModified(LocalDateTime.now());
         response.isSuccess = digitalCVRepo.save(existData) != null;
         return response;
     }
