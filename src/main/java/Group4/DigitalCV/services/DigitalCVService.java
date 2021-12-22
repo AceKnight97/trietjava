@@ -97,6 +97,7 @@ public class DigitalCVService {
             res.add(item.getCVManagement());
         }
         return res;
+        // return digitalCVRepo.getManagementCVs(email);
     }
 
     // POST

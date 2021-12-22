@@ -199,11 +199,11 @@ public class DigitalCV {
     }
 
     public ManagementCV getCVManagement() {
-        ManagementCV res = new ManagementCV();
-        res.setId(this.id);
-        res.setCvType(this.cvType);
-        res.setCreatedAt(this.createdAt);
-        res.setLastModified(this.lastModified);
+        ManagementCV res = new ManagementCV(this.id, this.createdAt, this.lastModified, this.cvType);
+        // res.setId(this.id);
+        // res.setCvType(this.cvType);
+        // res.setCreatedAt(this.createdAt);
+        // res.setLastModified(this.lastModified);
         return res;
     }
 }

@@ -7,12 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 public class ManagementCV {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime createdAt;
     private LocalDateTime lastModified;
     private String cvType;
+
+    public ManagementCV(Long id, LocalDateTime createdAt, LocalDateTime lastModified, String cvType) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.lastModified = lastModified;
+        this.cvType = cvType;
+    }
 
     public Long getId() {
         return this.id;
