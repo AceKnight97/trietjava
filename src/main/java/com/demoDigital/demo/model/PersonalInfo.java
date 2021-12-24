@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.demoDigital.demo.customModel.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
@@ -23,8 +24,10 @@ public class PersonalInfo {
     @OneToMany(mappedBy = "personalInfo", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<DigitalCV> digitalcvs = new ArrayList<>();
-    // @Column(name = "email", unique=true)
+
+    @Column(name = "email", unique = true)
     private String email;
+
     private String phone;
     private String address;
     private Gender gender;

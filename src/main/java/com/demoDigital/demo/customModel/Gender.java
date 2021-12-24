@@ -1,4 +1,4 @@
-package com.demoDigital.demo.model;
+package com.demoDigital.demo.customModel;
 
 public enum Gender {
     Male,

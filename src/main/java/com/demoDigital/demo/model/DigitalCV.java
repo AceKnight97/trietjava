@@ -1,17 +1,23 @@
 package com.demoDigital.demo.model;
 
-import lombok.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.demoDigital.demo.customModel.ManagementCV;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
-import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "digitalcvs")
@@ -48,11 +54,17 @@ public class DigitalCV {
     @OneToMany(mappedBy = "digitalCV", cascade = CascadeType.ALL)
     private List<OtherSkill> otherSkills = new ArrayList<>();
 
-    private String hobby;
+    // @ManyToOne(cascade = CascadeType.ALL)
+    // private ImageModel photo;
+    @Lob
     private String photo;
+
+    private String hobby;
     private String jobTitle;
     private String cvType;
     private Boolean isActive;
+    private LocalDateTime createdAt;
+    private LocalDateTime lastModified;
 
     public Boolean isIsActive() {
         return this.isActive;
@@ -168,5 +180,30 @@ public class DigitalCV {
 
     public void setCvType(String cvType) {
         this.cvType = cvType;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getLastModified() {
+        return this.lastModified;
+    }
+
+    public void setLastModified(LocalDateTime lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    public ManagementCV getCVManagement() {
+        ManagementCV res = new ManagementCV(this.id, this.createdAt, this.lastModified, this.cvType);
+        // res.setId(this.id);
+        // res.setCvType(this.cvType);
+        // res.setCreatedAt(this.createdAt);
+        // res.setLastModified(this.lastModified);
+        return res;
     }
 }
