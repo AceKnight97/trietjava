@@ -163,23 +163,8 @@ public class DigitalCVService {
             existData.setHobby(data.getHobby());
             existData.setJobTitle(data.getJobTitle());
             // UPDATE Image
-            if(data.getCvType() == null){
-                System.out.println("No CV Type");
-                return null;
-            }
-            String photo =data.getPhoto();
-            Boolean isValidPhoto = photo.contains("data:image/jpeg;base64") || photo.contains("data:image/png;base64");
-            if (!isValidPhoto) {
-                System.out.println("Invalid photo!");
-                return null;
-            }
-            existData.setPhoto(photo);
-            String cvType = data.getCvType();
-            if(cvType == null){
-                System.out.println("No CV Type!");
-                return null;
-            }
-            existData.setCvType(cvType);
+            existData.setPhoto(data.getPhoto());
+            existData.setCvType(data.getCvType());
             // existData.setIsActive(data.getIsActive());
             // UPDATE PERSONAL INFO
             PersonalInfo curPerson = existData.getPersonalInfo();

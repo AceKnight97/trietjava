@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/digitalcv")
+@RequestMapping("/digitalcv") // group4/
 public class DigitalCVController {
 
     @Autowired
