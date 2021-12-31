@@ -19,7 +19,7 @@ public class WebSecurityConfig {
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
                                 .antMatchers("/token/*", "/sign-up", "sign-in").permitAll()
-                                .anyRequest().permitAll()
+                                .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2Login ->
                         oauth2Login.loginPage("/oauth2/authorization/oidc"))
