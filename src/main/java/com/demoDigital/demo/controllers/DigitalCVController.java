@@ -8,6 +8,7 @@ import com.demoDigital.demo.model.DigitalCV;
 import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.model.OtherSkill;
 import com.demoDigital.demo.model.PersonalInfo;
+import com.demoDigital.demo.services.AuthService;
 import com.demoDigital.demo.services.DigitalCVService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +27,9 @@ public class DigitalCVController {
 
     @Autowired
     DigitalCVService digitalCVService;
+
+    @Autowired
+    AuthService authService;
 
     // GET
     @GetMapping("/{id}")
@@ -56,6 +61,7 @@ public class DigitalCVController {
         MutationResponse response = new MutationResponse();
         String photo = data.getPhoto().toLowerCase();
         Boolean isValidPhoto = photo.contains("data:image/jpeg;base64") || photo.contains("data:image/png;base64");
+        // System.out.println("isValidPhoto: " + isValidPhoto);
         if (!isValidPhoto) {
             response.isSuccess = false;
             response.message = "Invalid image type!";
@@ -79,10 +85,13 @@ public class DigitalCVController {
 
     // POST
     @PostMapping("/createcv")
-    public MutationResponse createcv(@RequestBody DigitalCV data) {
-        System.out.println(data.toString());
+    public MutationResponse createcv(@RequestBody DigitalCV data, @RequestHeader("Authorization") String token) {
+        PersonalInfo user = authService.authUser(token);
+        // System.out.println("user id: " + user.getId());
+        // System.out.println("user id: " + user.getEmail());
         MutationResponse response = this.checkUsernameJobTitle(data);
-        if (response.isSuccess == false) {
+        if (user == null || !response.isSuccess) {
+            response.isSuccess = false;
             return response;
         }
         response = this.checkValidPhoto(data);
