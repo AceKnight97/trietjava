@@ -87,8 +87,6 @@ public class DigitalCVController {
     @PostMapping("/createcv")
     public MutationResponse createcv(@RequestBody DigitalCV data, @RequestHeader("Authorization") String token) {
         PersonalInfo user = authService.authUser(token);
-        // System.out.println("user id: " + user.getId());
-        // System.out.println("user id: " + user.getEmail());
         MutationResponse response = this.checkUsernameJobTitle(data);
         if (user == null || !response.isSuccess) {
             response.isSuccess = false;
@@ -98,7 +96,8 @@ public class DigitalCVController {
         if (response.isSuccess == false) {
             return response;
         }
-        DigitalCV saveData = digitalCVService.createDigitalCV(data);
+        System.out.println("user id: " + user.getId() + ", email: " + user.getEmail());
+        DigitalCV saveData = digitalCVService.createDigitalCV(data, user.getId());
         response.isSuccess = saveData != null;
         response.data = saveData;
         return response;

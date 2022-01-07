@@ -5,8 +5,11 @@ import javax.validation.Valid;
 import com.demoDigital.demo.auth.JwtTokenUtil;
 import com.demoDigital.demo.customModel.AuthRequest;
 import com.demoDigital.demo.customModel.AuthResponse;
+import com.demoDigital.demo.customModel.CreateUserRequest;
+import com.demoDigital.demo.model.MutationResponse;
 import com.demoDigital.demo.model.PersonalInfo;
 import com.demoDigital.demo.repository.PersonalInfoRepository;
+import com.demoDigital.demo.services.PersonalInfoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,8 +30,12 @@ public class AuthApi {
 
     @Autowired
     JwtTokenUtil jwtTokenUtil;
+
     @Autowired
     PersonalInfoRepository personalRepo;
+
+    @Autowired
+    PersonalInfoService personalInfoService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -36,13 +43,13 @@ public class AuthApi {
     }
 
     @PostMapping("login")
-    public AuthResponse login(@RequestBody @Valid AuthRequest request) {
-        AuthResponse res = new AuthResponse();
-        // System.out.println("Request: " + request);
+    public MutationResponse login(@RequestBody @Valid AuthRequest request) {
+        MutationResponse res = new MutationResponse();
+        AuthResponse auth = new AuthResponse();
         String email = request.getEmail();
         String password = request.getPassword();
-        System.out.println("email: " + email);
-        System.out.println("password: " + password);
+        // System.out.println("email: " + email);
+        // System.out.println("password: " + password);
 
         PersonalInfo user = personalRepo.findByEmail(email);
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -50,18 +57,28 @@ public class AuthApi {
 
         if (email.equalsIgnoreCase(user.getEmail()) && encoder.matches(password, user.getPassword())) {
             String token = jwtTokenUtil.generateAccessToken(user);
-            System.out.println("true: " + token);
-            res.setUser(user);
-            res.setToken(token);
+            System.out.println("Login success, token: " + token);
+            auth.setUser(user);
+            auth.setToken(token);
+            res.data = auth;
         } else {
-            System.out.println("false ");
+            System.out.println("Login failed!");
+            res.isSuccess = false;
         }
         return res;
     }
 
-    // @PostMapping("register")
-    // public UserView register(@RequestBody @Valid CreateUserRequest request) {
-    // return userService.create(request);
-    // }
+    @PostMapping("register")
+    public MutationResponse register(@RequestBody @Valid CreateUserRequest request) {
+        MutationResponse res = new MutationResponse();
+        PersonalInfo newUser = personalInfoService.createUser(request);
+
+        if (newUser == null) {
+            res.isSuccess = false;
+            res.message = "Email already existed!";
+            return res;
+        }
+        return res;
+    }
 
 }

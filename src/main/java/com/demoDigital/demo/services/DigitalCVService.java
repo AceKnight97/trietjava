@@ -101,7 +101,7 @@ public class DigitalCVService {
     }
 
     // POST
-    public DigitalCV createDigitalCV(DigitalCV data) {
+    public DigitalCV createDigitalCV(DigitalCV data, Long userId) {
         String email = data.getPersonalInfo().getEmail();
         PersonalInfo personCV = personalInfoRepo.findByEmail(email);
         if (personCV == null) {
@@ -110,6 +110,12 @@ public class DigitalCVService {
             personalInfoRepo.save(personCV);
         } else {
             System.out.println("personCV NOT null");
+            System.out.println("userId: " + userId);
+            System.out.println("personCV.getId(): " + personCV.getId());
+            if (personCV.getId() != userId) {
+                System.out.println("Not allowed!");
+                return null;
+            }
             data.setPersonalInfo(personCV);
             digitalCVRepo.save(data);
         }
