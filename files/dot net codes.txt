@@ -1,0 +1,10 @@
+dotnet tool install --global dotnet-ef
+
+
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 5.0.1
+
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 5.0.1
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 5.0.1
+
+dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 5.0.1
